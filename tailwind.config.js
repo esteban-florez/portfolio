@@ -5,7 +5,7 @@ export default {
     "./src/**/*.ts"
   ],
   theme: {
-    extend: {},
+    extend: {}
   },
   plugins: [],
 }

@@ -1,4 +1,5 @@
 import './style.css'
+import './carousel'
 
 const greeting = document.querySelector('#greeting') as HTMLElement
 const name = document.querySelector('#name') as HTMLElement
