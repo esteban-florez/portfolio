@@ -7,10 +7,10 @@ const heroText = document.querySelector('#hero-text') as HTMLElement
 const heroCta = document.querySelector('#hero-cta') as HTMLElement
 
 fadeIn(greeting, 1, 0)
-fadeIn(name, 1.2, 1)
-fadeIn(title, 1.2, 1)
-fadeIn(heroText, 0.5, 2.2, false)
-fadeIn(heroCta, 0.5, 2.2, false)
+fadeIn(name, 1, .5)
+fadeIn(title, 1, .5)
+fadeIn(heroText, 0.25, 1.5, false)
+fadeIn(heroCta, 0.25, 1.5, false)
 
 function fadeIn(element: HTMLElement, duration: number, delay: number, translate = true) {
   element.style.opacity = '0'
