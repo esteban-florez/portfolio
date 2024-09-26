@@ -1,37 +1,40 @@
-const techs = [
-  { name: 'nextjs' },
-  { name: 'typescript' },
-  { name: 'laravel' },
-  { name: 'php' },
-  { name: 'tailwind' },
-  { name: 'react' },
-  { name: 'git' },
-  { name: 'github' },
-  { name: 'javascript' },
-  { name: 'node' },
-  { name: 'npm' },
-  { name: 'vite' },
-  { name: 'postgres' },
-  { name: 'mysql' },
-  { name: 'prisma' },
+const REM = 16
+const GAP = 6 * REM
+const LOGOS = [
+  'nextjs',
+  'typescript',
+  'laravel',
+  'php',
+  'tailwind',
+  'react',
+  'git',
+  'github',
+  'javascript',
+  'node',
+  'npm',
+  'vite',
+  'postgres',
+  'mysql',
+  'prisma',
 ]
 
 const carousel = document.querySelector('.carousel') as HTMLElement
+let running = true
 
-const REM = 16
-const GAP = 6 * REM
+const imgs = LOGOS.concat(structuredClone(LOGOS)).map(createImage)
 
-const imgs = techs.concat(structuredClone(techs)).map((tech, i) => {
-  const { name } = tech
-  const img = document.createElement('img')
-  img.src = `/logos/${name}.svg`
-  img.alt = `logo de ${name}`
-  img.classList.add('h-16', 'w-16', 'object-fill', 'absolute', 'top-[2.5rem]')
+carousel.append(...imgs)
 
-  img.style.left = `${GAP * i + GAP}px`
-
-  return img
+carousel.addEventListener('mouseenter', () => {
+  running = false
 })
+
+carousel.addEventListener('mouseleave', () => {
+  running = true
+  requestAnimationFrame(animate)
+})
+
+requestAnimationFrame(animate)
 
 function animate() {
   imgs.forEach(img => {
@@ -46,9 +49,25 @@ function animate() {
     img.style.left = `${2800}px`
   })
 
-  requestAnimationFrame(animate)
+  if (running) {
+    requestAnimationFrame(animate)
+  }
 }
 
-requestAnimationFrame(animate)
+function createImage(src: string, i: number) {
+  const img = document.createElement('img')
+  img.src = `/logos/${src}.svg`
+  img.alt = `logo de ${src}`
+  img.classList.add('h-16', 'w-16', 'object-fill', 'absolute', 'top-[2.5rem]', 'hoverable')
 
-carousel.append(...imgs)
+  img.classList.add('grayscale', 'hover:grayscale-0')
+
+  if (src === 'nextjs') {
+    img.classList.add('brightness-90', 'hover:brightness-200')
+  }
+
+  img.style.left = `${GAP * i + GAP}px`
+  img.style.transition = 'filter 300ms'
+
+  return img
+}
