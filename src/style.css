@@ -26,8 +26,20 @@ body {
   font-family: Playwrite;
 }
 
+.bg-gradient {
+  @apply bg-gradient-to-tr from-teal-400 from-25% to-green-400;
+}
+
+.text-gradient {
+  @apply bg-gradient-to-tr to-teal-400 from-25% from-green-400 bg-clip-text text-transparent;
+}
+
+.hover\:text-gradient:hover {
+  @apply text-gradient;
+}
+
 .underline-animation {
-  @apply block relative px-1;
+  @apply relative;
 }
 
 .underline-animation::after {
