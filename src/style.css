@@ -50,3 +50,11 @@ body {
 .bg-hero > div {
   min-height: calc(100vh - 4rem);
 }
+
+.carousel-logo {
+  transition: filter 300ms;
+}
+
+.carousel-logo:hover {
+  --tw-drop-shadow: drop-shadow(0 0 .25rem #999);
+}

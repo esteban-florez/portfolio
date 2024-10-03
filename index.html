@@ -7,8 +7,8 @@
   <title>Esteban Florez</title>
 </head>
 
-<body class="bg-slate-900 text-slate-400 selection:bg-teal-400 selection:text-teal-900">
-  <header class="bg-slate-800 flex items-center w-full px-8 h-16 justify-between fixed z-10">
+<body class="bg-slate-900 text-slate-400 selection:bg-teal-400 selection:text-teal-900 overflow-x-hidden">
+  <header class="flex items-center w-full px-8 h-16 justify-between">
     <div class="flex items-center gap-2">
       <a class="contents" href="/">
         <svg class="h-8 w-8 text-teal-400" fill="currentColor" version="1.1" id="Capa_1"
@@ -72,7 +72,7 @@
       </button>
     </div>
   </header>
-  <main class="pt-16">
+  <main>
     <section class="bg-hero">
       <div class="grid place-items-center backdrop-blur transition-all">
         <div class="text-center">
@@ -110,9 +110,16 @@
         </div>
       </div>
     </section>
-    <section class="bg-slate-950 h-36 overflow-x-hidden carousel relative">
+    <div id="tooltip-container">
+      <template id="tooltip-template">
+        <div role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 font-medium text-white transition-opacity duration-300 bg-gray-700 rounded-lg shadow-sm opacity-0 tooltip">
+          <div class="tooltip-arrow" data-popper-arrow></div>
+        </div>
+      </template>
+    </div>
+    <section class="bg-slate-950 h-36 overflow-x-hidden relative" id="carousel">
     </section>
-    <section class="p-20 flex justify-center gap-16" id="sobre-mi">
+    <section class="px-20 py-32 flex justify-center gap-16" id="sobre-mi">
       <div>
         <h3
           class="bg-gradient-to-br from-green-400 to-teal-400 bg-clip-text text-transparent tracking-tighter font-bold text-3xl">

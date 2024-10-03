@@ -1,27 +1,33 @@
+import { initTooltips } from 'flowbite'
+type LogoKey = keyof typeof LOGOS
+
 const REM = 16
 const GAP = 6 * REM
-const LOGOS = [
-  'nextjs',
-  'typescript',
-  'laravel',
-  'php',
-  'tailwind',
-  'react',
-  'git',
-  'github',
-  'javascript',
-  'node',
-  'npm',
-  'vite',
-  'postgres',
-  'mysql',
-  'prisma',
-]
+const LOGOS = {
+  nextjs: 'Next.js',
+  typescript: 'TypeScript',
+  laravel: 'Laravel',
+  mysql: 'MySQL',
+  php: 'PHP',
+  tailwind: 'TailwindCSS',
+  react: 'React',
+  git: 'Git',
+  github: 'GitHub',
+  javascript: 'JavaScript',
+  node: 'Node',
+  npm: 'NPM',
+  vite: 'Vite',
+  postgres: 'PostgreSQL',
+  prisma: 'Prisma',
+} as const
 
-const carousel = document.querySelector('.carousel') as HTMLElement
+const tooltipContainer = document.querySelector('#tooltip-container') as HTMLElement
+const template = document.querySelector('#tooltip-template') as HTMLTemplateElement
+const carousel = document.querySelector('#carousel') as HTMLElement
 let running = true
 
-const imgs = LOGOS.concat(structuredClone(LOGOS)).map(createImage)
+const keys = Object.keys(LOGOS) as LogoKey[]
+const imgs = keys.concat(structuredClone(keys)).map(createImage)
 
 carousel.append(...imgs)
 
@@ -34,9 +40,15 @@ carousel.addEventListener('mouseleave', () => {
   requestAnimationFrame(animate)
 })
 
+setTimeout(() => {
+  initTooltips()
+})
+
 requestAnimationFrame(animate)
 
 function animate() {
+  if (!running) return
+
   imgs.forEach(img => {
     const { right } = img.getBoundingClientRect()
     const left = parseInt(img.style.left)
@@ -49,25 +61,33 @@ function animate() {
     img.style.left = `${2800}px`
   })
 
-  if (running) {
-    requestAnimationFrame(animate)
-  }
+  requestAnimationFrame(animate)
 }
 
-function createImage(src: string, i: number) {
+function createImage(src: LogoKey, i: number) {
+  const tooltipSuffix = i < 15 ? 'a' : 'b'
   const img = document.createElement('img')
+  const tooltipId = `tooltip-${src}-${tooltipSuffix}`
+
   img.src = `/logos/${src}.svg`
   img.alt = `logo de ${src}`
-  img.classList.add('h-16', 'w-16', 'object-fill', 'absolute', 'top-[2.5rem]', 'hoverable')
+  img.setAttribute('data-tooltip-target', tooltipId)
 
-  img.classList.add('grayscale', 'hover:grayscale-0')
+  img.classList.add('h-16', 'w-16', 'object-fill', 'absolute', 'top-[2.5rem]', 'brightness-100', 'hover:brightness-125')
 
-  if (src === 'nextjs') {
-    img.classList.add('brightness-90', 'hover:brightness-200')
-  }
-
-  img.style.left = `${GAP * i + GAP}px`
+  img.style.left = `${GAP * i + REM}px`
   img.style.transition = 'filter 300ms'
 
+  createTooltip(src, tooltipId)
+
   return img
+}
+
+function createTooltip(src: LogoKey, id: string) {
+  const fragment = template.content.cloneNode(true) as DocumentFragment
+  const tooltip = fragment.children[0]
+
+  tooltip.id = id
+  tooltip.textContent = LOGOS[src]
+  tooltipContainer.append(tooltip)
 }
