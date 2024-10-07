@@ -4,6 +4,9 @@ type LogoKey = keyof typeof LOGOS
 const REM = 16
 const GAP = 6 * REM
 const LOGOS = {
+  vite: 'Vite',
+  postgres: 'PostgreSQL',
+  prisma: 'Prisma',
   nextjs: 'Next.js',
   typescript: 'TypeScript',
   laravel: 'Laravel',
@@ -16,9 +19,7 @@ const LOGOS = {
   javascript: 'JavaScript',
   node: 'Node',
   npm: 'NPM',
-  vite: 'Vite',
-  postgres: 'PostgreSQL',
-  prisma: 'Prisma',
+  flowbite: 'Flowbite',
 } as const
 
 const tooltipContainer = document.querySelector('#tooltip-container') as HTMLElement
@@ -65,7 +66,7 @@ function animate() {
 }
 
 function createImage(src: LogoKey, i: number) {
-  const tooltipSuffix = i < 15 ? 'a' : 'b'
+  const tooltipSuffix = i < keys.length ? 'a' : 'b'
   const img = document.createElement('img')
   const tooltipId = `tooltip-${src}-${tooltipSuffix}`
 
