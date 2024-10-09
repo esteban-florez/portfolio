@@ -59,7 +59,7 @@ function animate() {
       return
     }
   
-    img.style.left = `${2800}px`
+    img.style.left = `${2992}px`
   })
 
   requestAnimationFrame(animate)
