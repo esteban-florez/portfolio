@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scrollbar-width: thin;
+}
+
 @font-face {
   font-family: Inter;
   src: url('/Inter.ttf');
@@ -69,4 +73,32 @@ body {
 
 .carousel-logo:hover {
   --tw-drop-shadow: drop-shadow(0 0 .25rem #999);
+}
+
+dialog[open].animate-fadein {
+  animation: fadein 200ms ease-in both;
+}
+
+dialog[open].animate-fadein::backdrop {
+  animation: fadein-backdrop 200ms ease-in both;
+}
+
+@keyframes fadein {
+  0%{
+    opacity:0;
+  }
+
+  100%{
+    opacity:1;
+  }
+}
+
+@keyframes fadein-backdrop {
+  0%{
+    opacity:0;
+  }
+
+  100%{
+    opacity: .9;
+  }
 }
