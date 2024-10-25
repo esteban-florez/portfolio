@@ -16,6 +16,7 @@ const nextButton = document.querySelector('#gallery-next') as HTMLButtonElement
 let folder: keyof typeof IMAGES
 let current = 0
 let max = 0
+let timer: number | null = null
 const url = (filename: string) => `/projects/${folder}/${filename}.png`
 
 closeButton.addEventListener('click', () => {
@@ -48,6 +49,16 @@ screenshots.forEach(screenshot => {
   screenshot.addEventListener('click', openGallery)
 })
 
+modal.addEventListener('mousemove', () => {
+  console.log('resetting')
+  resetOpacityTimer()
+})
+
+modal.addEventListener('click', () => {
+  console.log('resetting')
+  resetOpacityTimer()
+})
+
 async function openGallery(event: Event) {
   const { dataset } = event.currentTarget as HTMLElement
   folder = dataset.images as keyof typeof IMAGES 
@@ -72,6 +83,7 @@ async function openGallery(event: Event) {
 
   updateImage()
 
+  resetOpacityTimer()
   modal.showModal()
   document.documentElement.style.overflow = 'hidden'
 }
@@ -93,4 +105,27 @@ function updateImage() {
 
   const filename = IMAGES[folder][current]
   galleryImage.src = url(filename)
+}
+
+function resetOpacityTimer() {
+  if (timer !== null) {
+    clearTimeout(timer)
+  }
+  
+  const controls = slides.parentElement as HTMLDivElement
+  const invisible = ['opacity-0', 'pointer-events-none']
+  const visible = ['opacity-100', 'transition-opacity']
+  
+  timer = setTimeout(() => {
+    controls.classList.add(...invisible)
+    controls.classList.remove(...visible)
+    closeButton.classList.add(...invisible)
+    closeButton.classList.remove(...visible)
+    timer = null
+  }, 800)
+  
+  controls.classList.remove(...invisible)
+  controls.classList.add(...visible)
+  closeButton.classList.remove(...invisible)
+  closeButton.classList.add(...visible)
 }
