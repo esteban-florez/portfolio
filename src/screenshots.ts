@@ -122,7 +122,7 @@ function resetOpacityTimer() {
     closeButton.classList.add(...invisible)
     closeButton.classList.remove(...visible)
     timer = null
-  }, 800)
+  }, 500)
   
   controls.classList.remove(...invisible)
   controls.classList.add(...visible)
