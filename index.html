@@ -194,6 +194,7 @@
           <div class="flex items-center gap-4 mt-4">
             <a href="http://novaship-dev.vercel.app" target="_blank" rel="noopener noreferrer"
               class="flex bg-gradient rounded-lg items-center gap-1 text-slate-800 px-2 py-1 text-sm">
+
               <svg class="h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -361,9 +362,8 @@
               Repositorio
             </a>
           </div>
-          <!-- TODO -> añadir reto -->
           <p class="max-w-[60ch] mt-4">Desarrollé esta pequeña aplicación basada en un <a
-              class="text-green-400 font-medium hover:underline" href="#">reto de FrontendMentor</a>, mientras aprendía
+              class="text-green-400 font-medium hover:underline" href="https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW" target="_blank" rel="noopener noreferrer">reto de FrontendMentor</a>, mientras aprendía
             las bases de <span class="text-slate-200">React</span>. Permite <span class="text-slate-200">crear, filtrar,
               y eliminar tareas</span>, además de marcarlas como completadas, guardando los datos al almacenamiento
             local del navegador, además de poder alternar entre <span class="text-slate-200">tema claro y oscuro.</span>
@@ -376,7 +376,8 @@
           </div>
         </div>
       </div>
-      <div class="flex justify-end w-full">
+      <!-- TODO -> archivo de proyectos -->
+      <!-- <div class="flex justify-end w-full">
         <a class="font-medium flex items-center gap-1 text-green-400 hover:underline" href="/proyectos">
           Ver más proyectos
           <svg class="h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -389,6 +390,25 @@
             </g>
           </svg>
         </a>
+      </div> -->
+    </section>
+    <section class="px-32 py-20" id="habilidades">
+      <h2 class="font-bold text-4xl text-gradient tracking-tighter text-center">Mis habilidades</h2>
+      <p class="text-lg text-center">Estas son las principales tecnologías para desarrollo web que he aprendido y utilizado a lo largo de mi formación</p>
+
+      <div class="rounded-xl shadow bg-[url('bg-pattern.jpg')] mt-8">
+        <template id="skill-template">
+          <div class="px-4">
+            <figure class="pt-3 pb-2 rounded-xl border-2 border-green-400 backdrop-blur-sm">
+              <img class="max-w-20 mx-auto" src="" alt="">
+              <figcaption class="text-slate-200 text-xl font-semibold tracking-tight text-center mt-3 mb-0"></figcaption>
+            </figure>
+          </div>
+        </template>
+        <div class="p-4 rounded-xl bg-slate-950/50">
+          <div class="grid grid-cols-4 gap-y-6" id="skills-grid">
+          </div>
+        </div>
       </div>
     </section>
     <section class="bg-[url('/bg-code.jpg')] bg-cover bg-center" id="contacto">
