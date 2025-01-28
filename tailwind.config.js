@@ -3,9 +3,8 @@ import flowbite from 'flowbite/plugin'
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./index.html",
-    "./src/**/*.ts",
-    "./node_modules/flowbite/**/*.js"
+    './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
+    './node_modules/flowbite/**/*.js'
   ],
   theme: {
     extend: {}

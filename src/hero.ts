@@ -1,10 +1,10 @@
 const greeting = document.querySelector('#greeting') as HTMLElement
-const name = document.querySelector('#name') as HTMLElement
+const nameEl = document.querySelector('#name') as HTMLElement
 const title = document.querySelector('#title') as HTMLElement
 const heroText = document.querySelector('#hero-text') as HTMLElement
 
 fadeIn(greeting, 1, 0)
-fadeIn(name, 1, .5)
+fadeIn(nameEl, 1, .5)
 fadeIn(title, 1, .5)
 fadeIn(heroText, 0.25, 1.5, false)
 

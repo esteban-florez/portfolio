@@ -1,4 +1,6 @@
-<!doctype html>
+---
+import '../styles.css'
+---
 
 <html class="scroll" lang="es">
 <head>
@@ -6,6 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Esteban Florez - Desarrollador Web</title>
   <meta name="description" content="Portafolio personal de Esteban Florez, Desarrollador Web.">
+  <meta name="generator" content={Astro.generator} />
+  <link rel="stylesheet" href="style.css">
+  <script src="../main.ts"></script>
 </head>
 
 <body class="bg-slate-900 text-slate-400 selection:bg-teal-400 selection:text-teal-900 overflow-x-hidden">
@@ -486,7 +491,6 @@
       </div>
     </div>
   </footer>
-  <script type="module" src="/src/main.ts"></script>
 </body>
 
 </html>

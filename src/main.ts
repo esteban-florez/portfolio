@@ -1,4 +1,3 @@
-import './style.css'
 import './hero'
 import './carousel'
 import './screenshots'
