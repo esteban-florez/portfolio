@@ -50,12 +50,10 @@ screenshots.forEach(screenshot => {
 })
 
 modal.addEventListener('mousemove', () => {
-  console.log('resetting')
   resetOpacityTimer()
 })
 
 modal.addEventListener('click', () => {
-  console.log('resetting')
   resetOpacityTimer()
 })
 

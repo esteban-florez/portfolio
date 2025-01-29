@@ -1,5 +1,0 @@
-import './hero'
-import './carousel'
-import './screenshots'
-import './info'
-import './skills'
