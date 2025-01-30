@@ -15,31 +15,8 @@ let timer: number | null = null
 let thumbnails: HTMLImageElement[] = []
 let slides: HTMLImageElement[] = []
 
-closeButton.addEventListener('click', () => {
-  slideshow.close()
-})
-
-previousButton.addEventListener('click', () => {
-  if (current <= 0) {
-    current = max
-  } else {
-    current--
-  }
-  updateImage()
-})
-
-nextButton.addEventListener('click', () => {
-  if (current >= max) {
-    current = 0
-  } else {
-    current++
-  }
-  updateImage()
-})
-
-slideshow.addEventListener('close', () => {
-  document.documentElement.removeAttribute('style')
-})
+previousButton.addEventListener('click', previousSlide)
+nextButton.addEventListener('click', nextSlide)
 
 covers.forEach(cover => {
   cover.addEventListener('click', openGallery)
@@ -47,6 +24,11 @@ covers.forEach(cover => {
 
 slideshow.addEventListener('mousemove', resetOpacityTimer)
 slideshow.addEventListener('click', resetOpacityTimer)
+
+slideshow.addEventListener('close', () => {
+  allThumbnails.forEach(thumb => thumb.onclick = null)
+  document.removeEventListener('keyup', slideWithKeys)
+})
 
 function openGallery(event: Event) {
   const { dataset } = event.currentTarget as HTMLElement
@@ -73,10 +55,17 @@ function openGallery(event: Event) {
   })
 
   updateImage()
+  document.addEventListener('keyup', slideWithKeys)
+}
 
-  resetOpacityTimer()
-  slideshow.showModal()
-  document.documentElement.style.overflow = 'hidden'
+function slideWithKeys(event: KeyboardEvent) {
+  if (event.key === 'ArrowRight') {
+    nextSlide()
+  }
+
+  if (event.key === 'ArrowLeft') {
+    previousSlide()
+  }
 }
 
 function updateImage() {
@@ -96,6 +85,8 @@ function updateImage() {
   // show and hide slides
   allSlides.forEach(slide => slide.classList.add('hidden'))
   slides[current].classList.remove('hidden')
+
+  resetOpacityTimer()
 }
 
 function resetOpacityTimer() {
@@ -119,4 +110,22 @@ function resetOpacityTimer() {
   controls.classList.add(...visible)
   closeButton.classList.remove(...invisible)
   closeButton.classList.add(...visible)
+}
+
+function previousSlide() {
+  if (current <= 0) {
+    current = max
+  } else {
+    current--
+  }
+  updateImage()
+}
+
+function nextSlide() {
+  if (current >= max) {
+    current = 0
+  } else {
+    current++
+  }
+  updateImage()
 }

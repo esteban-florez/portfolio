@@ -1,0 +1,13 @@
+---
+const { class: classes, id } = Astro.props
+
+if (!id) throw new Error('Dialog component needs an ID prop.');
+
+const props = structuredClone(Astro.props)
+delete props.class
+---
+
+<dialog {...props} class:list={['backdrop:w-screen backdrop:h-screen backdrop:bg-black animate-fadein border-none outline-none open:block', classes]}>
+  <slot />
+</dialog>
+<script src="/src/scripts/dialog.ts"></script>

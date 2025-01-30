@@ -51,8 +51,5 @@ import { IMAGES } from '../../consts'
       <Icon id="link" class="h-4" />
     </a>
   </div> -->
-  {Object.entries(IMAGES).map(([project, images]) => (
-    <Slideshow  project={project} images={images} />
-  ))}
 </section>
-<script src="/src/scripts/projects.ts"></script>
+<Slideshow />
