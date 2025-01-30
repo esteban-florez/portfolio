@@ -25,3 +25,18 @@ export const IMAGES = {
   todo: ['light', 'dark'],
   uptavs: ['stats', 'dashboard', 'courses', 'profile', 'payments'],
 } as const
+
+export const SKILLS = {
+  typescript: 'TypeScript',
+  react: 'React',
+  nextjs: 'Next.js',
+  tailwind: 'Tailwind',
+  php: 'PHP',
+  laravel: 'Laravel',
+  vue: 'Vue',
+  bootstrap: 'Bootstrap',
+  node: 'Node',
+  vite: 'Vite',
+  mysql: 'MySQL',
+  postgres: 'PostgreSQL',
+} as const
