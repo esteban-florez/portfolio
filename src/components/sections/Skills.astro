@@ -10,7 +10,7 @@ interface Image {
 const promises = Object.entries(SKILLS)
   .map(async ([src, title]) => ({
     name: title,
-    src: (await import(`/src/images/logos/${src}.svg`)).default
+    src: (await import(`../../images/logos/${src}.svg`)).default
   }))
 
 const images = await Promise.all(promises)

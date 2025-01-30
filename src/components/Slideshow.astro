@@ -15,7 +15,7 @@ const promises = Object.entries(IMAGES).flatMap(([project, images]) => {
 }).map(async image => ({
   project: image.project,
   name: image.name,
-  src: (await import(`/src/images/projects/${image.project}/${image.name}.png`)).default
+  src: (await import(`../images/projects/${image.project}/${image.name}.png`)).default
 }))
 
 const images = await Promise.all(promises)

@@ -9,5 +9,8 @@ infoBtn?.addEventListener('click', () => {
 
 closeBtn?.addEventListener('click', () => {
   dialog?.close()
+})
+
+dialog?.addEventListener('close', () => {
   document.documentElement.style.overflow = ''
 })

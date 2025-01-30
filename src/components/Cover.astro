@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets'
 import Icon from './Icon.astro'
 const { id, image } = Astro.props
-const src = import(`/src/images/projects/${id}/${image}`)
+const src = import(`../images/projects/${id}/${image}.png`)
 ---
 <div class="border-4 border-slate-700 rounded-lg relative cursor-pointer max-w-[550px] w-full h-full overflow-y-hidden group">
   <Image class="rounded" src={src} alt="Captura de pantalla de un proyecto" data-cover={id} />
