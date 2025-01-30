@@ -1,0 +1,11 @@
+---
+const { id } = Astro.props
+
+const module = await import(`/src/icons/${id}.astro`)
+const Imported = module.default
+
+const props = structuredClone(Astro.props)
+delete props.id
+---
+
+<Imported {...props} />

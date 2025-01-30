@@ -1,6 +1,7 @@
 ---
 import Project from '../Project.astro'
 import Divider from '../Divider.astro'
+import Icon from '../Icon.astro'
 // <!-- TODO: Desplegar y poner links a todos los proyectos -->
 ---
 
@@ -43,35 +44,27 @@ import Divider from '../Divider.astro'
     <p class="max-w-[60ch] mt-4">Desarrollé esta pequeña aplicación basada en un <a class="text-green-400 font-medium hover:underline" href="https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW" target="_blank" rel="noopener noreferrer">reto de FrontendMentor</a>, mientras aprendía las bases de <span class="text-slate-200">React</span>. Permite <span class="text-slate-200">crear, filtrar, y eliminar tareas</span>, además de marcarlas como completadas, guardando los datos al almacenamiento local del navegador, además de poder alternar entre <span class="text-slate-200">tema claro y oscuro.</span></p>
   </Project>
   <!-- TODO -> archivo de proyectos -->
-  <!-- <div class="flex justify-end w-full">
+  <div class="flex justify-end w-full">
     <a class="font-medium flex items-center gap-1 text-green-400 hover:underline" href="/proyectos">
       Ver más proyectos
-      <svg class="h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-        <g id="SVGRepo_iconCarrier">
-          <path
-            d="M20 4L12 12M20 4V8.5M20 4H15.5M19 12.5V16.8C19 17.9201 19 18.4802 18.782 18.908C18.5903 19.2843 18.2843 19.5903 17.908 19.782C17.4802 20 16.9201 20 15.8 20H7.2C6.0799 20 5.51984 20 5.09202 19.782C4.71569 19.5903 4.40973 19.2843 4.21799 18.908C4 18.4802 4 17.9201 4 16.8V8.2C4 7.0799 4 6.51984 4.21799 6.09202C4.40973 5.71569 4.71569 5.40973 5.09202 5.21799C5.51984 5 6.07989 5 7.2 5H11.5"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-        </g>
-      </svg>
+      <Icon id="link" class="h-4" />
     </a>
-  </div> -->
+  </div>
 </section>
 
 <dialog class="backdrop:w-screen backdrop:h-screen backdrop:bg-black animate-fadein border-none outline-none open:block h-[calc(100vh-1rem)] select-none" id="gallery">
   <img class="w-full h-full" src="" alt="Capturas de pantalla de proyectos" id="gallery-image">
   <button class="grid place-items-center absolute top-2 right-2 outline-none bg-slate-950/80 rounded-full group opacity-100 transition-opacity duration-1000" type="button" id="gallery-close">
-    <svg class="rounded-full w-9 h-9 p-2 text-slate-200 group-hover:text-slate-100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2.4"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20.7457 3.32851C20.3552 2.93798 19.722 2.93798 19.3315 3.32851L12.0371 10.6229L4.74275 3.32851C4.35223 2.93798 3.71906 2.93798 3.32854 3.32851C2.93801 3.71903 2.93801 4.3522 3.32854 4.74272L10.6229 12.0371L3.32856 19.3314C2.93803 19.722 2.93803 20.3551 3.32856 20.7457C3.71908 21.1362 4.35225 21.1362 4.74277 20.7457L12.0371 13.4513L19.3315 20.7457C19.722 21.1362 20.3552 21.1362 20.7457 20.7457C21.1362 20.3551 21.1362 19.722 20.7457 19.3315L13.4513 12.0371L20.7457 4.74272C21.1362 4.3522 21.1362 3.71903 20.7457 3.32851Z" fill="currentColor"></path> </g></svg>
+    <Icon id="close" class="rounded-full w-9 h-9 p-2 text-slate-200 group-hover:text-slate-100" />
   </button>
   <div class="flex bg-slate-950/80 py-4 justify-center items-center gap-4 absolute w-full bottom-0 opacity-100 transition-opacity duration-1000">
     <button class="grid place-items-center rounded-full group disabled:pointer-events-none" type="button" id="gallery-previous">
-      <svg class="h-12 text-slate-300 group-disabled:text-slate-600 group-hover:text-slate-100 transition-colors" fill="currentColor" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zM142.1 273l135.5 135.5c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L226.9 256l101.6-101.6c9.4-9.4 9.4-24.6 0-33.9l-17-17c-9.4-9.4-24.6-9.4-33.9 0L142.1 239c-9.4 9.4-9.4 24.6 0 34z"></path></g></svg>
+      <Icon id="left" class="h-12 text-slate-300 group-disabled:text-slate-600 group-hover:text-slate-100 transition-colors" />
     </button>
     <div class="flex justify-center items-center gap-4" id="gallery-slides">
     </div>
     <button class="grid place-items-center rounded-full group disabled:pointer-events-none" type="button" id="gallery-next">
-      <svg class="h-12 text-slate-300 group-disabled:text-slate-600 group-hover:text-slate-100 transition-colors" fill="currentColor" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></g></svg>
+      <Icon id="right" class="h-12 text-slate-300 group-disabled:text-slate-600 group-hover:text-slate-100 transition-colors" />
     </button>
   </div>
   <template id="slide-template">
