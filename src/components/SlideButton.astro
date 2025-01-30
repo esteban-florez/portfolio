@@ -1,0 +1,11 @@
+---
+import Icon from './Icon.astro'
+
+const { icon } = Astro.props
+const props = structuredClone(Astro.props)
+delete props.icon
+---
+
+<button class="grid place-items-center rounded-full group disabled:pointer-events-none" type="button" {...Astro.props}>
+  <Icon id={icon} class="h-12 text-slate-300 group-disabled:text-slate-600 group-hover:text-slate-100 transition-colors" />
+</button> 

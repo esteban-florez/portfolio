@@ -1,5 +1,6 @@
 export const REM = 16
 export const GAP = 6 * REM
+
 export const LOGOS = {
   vite: 'Vite',
   postgres: 'PostgreSQL',
@@ -17,4 +18,10 @@ export const LOGOS = {
   node: 'Node',
   npm: 'NPM',
   flowbite: 'Flowbite',
+} as const
+
+export const IMAGES = {
+  novaship: ['register', 'profile', 'internship', 'offers'],
+  todo: ['light', 'dark'],
+  uptavs: ['stats', 'dashboard', 'courses', 'profile', 'payments'],
 } as const
