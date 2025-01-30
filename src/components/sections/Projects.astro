@@ -1,10 +1,21 @@
+---
+import { Image } from 'astro:assets'
+import novaship from '/src/images/projects/novaship/register.png'
+import uptavs from '/src/images/projects/uptavs/stats.png'
+import todo from '/src/images/projects/todo/light.png'
+---
+
 <section class="bg-slate-950 py-20 px-32" id="proyectos">
   <h2 class="font-bold text-4xl text-gradient">Mis proyectos</h2>
   <p class="text-lg">Estos son proyectos principales que he creado durante mis años de formación: </p>
   <div class="bg-slate-900 flex items-center my-6 gap-4 p-8 rounded-xl">
     <div
       class="border-4 border-slate-700 rounded-lg relative cursor-pointer max-w-[550px] w-full h-full overflow-y-hidden group" data-images="novaship">
-      <img class="rounded" src="/projects/novaship/register.png" alt="Captura de pantalla de un proyecto">
+      <Image 
+        class="rounded"
+        src={novaship}
+        alt="Captura de pantalla de un proyecto"
+      />
       <div class="bg-slate-950 opacity-0 w-full h-full rounded absolute top-0 left-0 group-hover:opacity-25 transition-opacity pointer-events-none"></div>
       <div class="w-full h-full absolute top-0 left-0 grid place-items-center pointer-events-none">
         <svg class="text-slate-100 opacity-0 group-hover:opacity-100 w-20 pointer-events-none" fill="currentColor" viewBox="0 0 32 32" version="1.1"
@@ -122,7 +133,11 @@
     </div>
     <div
       class="border-4 border-slate-700 rounded-lg relative cursor-pointer max-w-[550px] w-full h-full overflow-y-hidden group" data-images="uptavs">
-      <img class="rounded" src="/projects/uptavs/stats.png" alt="Captura de pantalla de un proyecto">
+      <Image 
+        class="rounded"
+        src={uptavs}
+        alt="Captura de pantalla de un proyecto"
+      />
       <div class="bg-slate-950 opacity-0 w-full h-full rounded absolute top-0 left-0 group-hover:opacity-25 transition-opacity"></div>
       <div class="w-full h-full absolute top-0 left-0 grid place-items-center">
         <svg class="text-slate-100 opacity-0 group-hover:opacity-100 w-20" fill="currentColor" viewBox="0 0 32 32" version="1.1"
@@ -146,7 +161,11 @@
   <div class="bg-slate-900 flex my-6 gap-4 p-8 rounded-xl">
     <div
       class="border-4 border-slate-700 rounded-lg relative cursor-pointer max-w-[550px] w-full h-full overflow-y-hidden group" data-images="todo">
-      <img class="rounded" src="/projects/todo/light.png" alt="Captura de pantalla de un proyecto">
+      <Image
+        class="rounded"
+        src={todo}
+        alt="Captura de pantalla de un proyecto"
+      />
       <div class="bg-slate-950 opacity-0 w-full h-full rounded absolute top-0 left-0 group-hover:opacity-25 transition-opacity"></div>
       <div class="w-full h-full absolute top-0 left-0 grid place-items-center">
         <svg class="text-slate-100 opacity-0 group-hover:opacity-100 w-20" fill="currentColor" viewBox="0 0 32 32" version="1.1"
@@ -245,4 +264,4 @@
     <img class="ring-4 ring-transparent hover:ring-slate-400 cursor-pointer h-16 transition-all" alt="Captura de pantalla">
   </template>
 </dialog>
-<script src="../scripts/projects.ts"></script>
+<script src="/src/scripts/projects.ts"></script>

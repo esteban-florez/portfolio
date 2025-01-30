@@ -1,3 +1,8 @@
+---
+import profile from '/src/images/perfil.jpg'
+import { Image } from 'astro:assets'
+---
+
 <section class="px-20 py-32 flex justify-center gap-16" id="sobre-mi">
   <div>
     <h3 class="text-gradient tracking-tighter font-bold text-3xl">
@@ -40,7 +45,10 @@
   <div class="relative">
     <div class="h-80 w-72 rounded-lg bg-gradient absolute -z-10 rotate-12 grid place-items-center">
     </div>
-    <img class="h-80 w-72 object-cover rounded-xl object-top border-4 border-slate-900" src="/perfil.jpg"
-      alt="Imagen de Esteban Florez">
+    <Image 
+      class="h-80 w-72 object-cover rounded-xl object-top border-4 border-slate-900"
+      src={profile}
+      alt="Imagen de Esteban Florez"
+    />
   </div>
 </section>

@@ -1,0 +1,23 @@
+---
+import { LOGOS } from '../../consts'
+import Logo from '../Logo.astro'
+import Tooltip from '../Tooltip.astro'
+
+const entries = Object.entries(LOGOS)
+const logos = entries.concat(structuredClone(entries))
+const tooltipId = (src: string, index: number) => 
+  `tooltip-${src}-${index < entries.length ? 'a' : 'b'}`
+---
+
+<div id="tooltip-container">
+  {logos.map(([src, title], index) => (
+    <Tooltip title={title} id={tooltipId(src, index)} />
+  ))}
+</div>
+<section class="bg-slate-950 h-36 overflow-x-hidden relative" id="carousel">
+  {logos.map(([src, title], index) => (
+    <Logo src={src} title={title} tooltip={tooltipId(src, index)} />
+  ))}
+</section>
+<script src="/src/scripts/carousel.ts"></script>
+

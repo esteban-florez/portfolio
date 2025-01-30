@@ -59,7 +59,7 @@ body {
 }
 
 .bg-hero {
-  background-image: url('/bg-hero.svg');
+  background-image: url('/src/images/bg-hero.svg');
   background-size: cover;
 }
 
