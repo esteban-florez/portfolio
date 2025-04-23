@@ -53,14 +53,15 @@ body {
 }
 
 .underline-animation:hover::after,
-.underline-animation:focus::after {
+.underline-animation:focus::after,
+.underline-animation.always-active::after {
   @apply opacity-100;
   transform: translate3d(0, 0.2rem, 0);
 }
 
 .bg-hero {
   background-image: url('/src/images/bg-hero.svg');
-  background-size: cover;
+  @apply bg-center md:bg-left bg-cover;
 }
 
 .bg-hero > div {
@@ -84,21 +85,21 @@ dialog[open].animate-fadein::backdrop {
 }
 
 @keyframes fadein {
-  0%{
+  0% {
     opacity:0;
   }
 
-  100%{
+  100% {
     opacity:1;
   }
 }
 
 @keyframes fadein-backdrop {
-  0%{
+  0% {
     opacity:0;
   }
 
-  100%{
+  100% {
     opacity: .9;
   }
 }
