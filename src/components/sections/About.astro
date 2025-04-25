@@ -4,19 +4,18 @@ import profile from '/src/images/perfil.jpg'
 import { Image } from 'astro:assets'
 ---
 
-<section class="px-20 py-32 flex justify-center gap-16" id="sobre-mi">
-  <div>
+<section class="container px-4 py-16 md:px-10 md:py-20 lg:py-32 mx-auto flex flex-col items-center md:flex-row justify-around lg:justify-center gap-16 md:gap-4 lg:gap-16" id="sobre-mi">
+  <div class="md:w-5/12 lg:max-w-none">
     <h3 class="text-gradient tracking-tighter font-bold text-3xl">
-      Sobre mí</h3>
+      Sobre mí
+    </h3>
     <p class="mt-4 max-w-sm">
-      Soy <span class="text-slate-200">Técnico Superior en Informática</span>, con conocimientos en <span
+      Soy <span class="text-slate-200">Ingeniero en Informática</span>, con conocimientos en <span
         class="text-slate-200">Desarrollo web back-end y front-end</span>, creando aplicaciones web con frameworks
       como <span class="text-slate-200">Next.js</span> y <span class="text-slate-200">Laravel</span>.
     </p>
     <p class="mt-4 max-w-sm">
-      Actualmente me encuentro cursando el último semestre de <span class="text-slate-200">Ingeniería en
-        Informática</span>, y también estoy en busca de oportunidades para aplicar mis conocimientos en el <span
-        class="text-slate-200">ámbito laboral</span>.
+      Actualmente me encuentro trabajando como <span class="text-slate-200">Desarrollador Web Freelance</span>, y también estoy en busca de oportunidades diferentes <span class="text-slate-200">oportunidades laborales</span>.
     </p>
     <div class="flex gap-4 mt-4">
       <a href="https://www.linkedin.com/in/esteban-florez-b210a5283" target="_blank" rel="noopener noreferrer"
@@ -31,11 +30,11 @@ import { Image } from 'astro:assets'
       </a>
     </div>
   </div>
-  <div class="relative">
-    <div class="h-80 w-72 rounded-lg bg-gradient absolute -z-10 rotate-12 grid place-items-center">
+  <div class="relative mx-auto md:mx-0">
+    <div class="w-64 lg:w-72 rounded-lg bg-gradient absolute -z-10 rotate-12 grid place-items-center aspect-[18/20]">
     </div>
-    <Image 
-      class="h-80 w-72 object-cover rounded-xl object-top border-4 border-slate-900"
+    <Image
+      class="w-64 lg:w-72 object-cover rounded-xl object-top border-4 border-slate-900 aspect-[18/20]"
       src={profile}
       alt="Imagen de Esteban Florez"
     />
