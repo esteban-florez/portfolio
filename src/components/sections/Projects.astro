@@ -5,50 +5,54 @@ import Slideshow from '../Slideshow.astro'
 // <!-- TODO: Desplegar y poner links a todos los proyectos -->
 ---
 
-<section class="bg-slate-950 py-20 px-32" id="proyectos">
-  <h2 class="font-bold text-4xl text-gradient">Mis proyectos</h2>
-  <p class="text-lg">Estos son proyectos principales que he creado durante mis años de formación: </p>
-  <Project
-    id="novaship"
-    title="Novaship - Aplicacion web de pasantías y ofertas de trabajo"
-    date="2022-2023"
-    image="register"
-    url="http://novaship-dev.vercel.app"
-    stack={['React', 'Next.js', 'TailwindCSS', 'Prisma', 'PostgreSQL']}
-  >
-    <p class="max-w-[60ch] mt-4">Desarrollé esta aplicación web como uno de mis <span class="text-slate-200">proyectos universitarios.</span> Permite a los estudiantes universitarios el buscar cupos para <span class="text-slate-200">pasantías y ofertas de trabajo</span> publicadas porempresas, además de permitir a las universidades llevar un control de sus pasantes.</p>
-  </Project>
-  <Divider />
-  <Project
-    id="uptavs"
-    title="Sistema de Cursos Universitarios"
-    date="2021-2022"
-    image="stats"
-    repo="uptavs-app"
-    url="http://novaship-dev.vercel.app"
-    stack={['PHP', 'Laravel', 'MySQL', 'Bootstrap', 'JavaScript']}
-    inverted
-  >
-    <p class="max-w-[60ch] mt-4">Sistema web para la gestión de <span class="text-slate-200">cursos y clubes universitarios.</span> Permite la publicación de cursos por parte de una universidad, asignación de instructores, <span></span> control de matrícula, aprobación de estudiantes, etc. Permite a los usuarios descubrir los cursos publicados, matricularse y obtener sus <span class="text-slate-200">certificados en línea.</span></p>
-  </Project>
-  <Divider />
-  <Project
-    id="todo"
-    title="ToDo - Aplicación de lista de tareas"
-    date="2022-2023"
-    image="light"
-    repo="todo-app"
-    url="http://novaship-dev.vercel.app"
-    stack={['JavaScript', 'React', 'Webpack', 'CSS']}
-  >
-    <p class="max-w-[60ch] mt-4">Desarrollé esta pequeña aplicación basada en un <a class="text-green-400 font-medium hover:underline" href="https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW" target="_blank" rel="noopener noreferrer">reto de FrontendMentor</a>, mientras aprendía las bases de <span class="text-slate-200">React</span>. Permite <span class="text-slate-200">crear, filtrar, y eliminar tareas</span>, además de marcarlas como completadas, guardando los datos al almacenamiento local del navegador, además de poder alternar entre <span class="text-slate-200">tema claro y oscuro.</span></p>
-  </Project>
-  <!-- TODO -> archivo de proyectos -->
-  <!-- <div class="flex justify-end w-full">
-    <a class="font-medium flex items-center gap-1 text-green-400 hover:underline" href="/proyectos">
-      Ver más proyectos
-      <Icon id="link" class="h-4" />
-    </a>
-  </div> -->
+<section class="bg-slate-950" id="proyectos">
+  <div class="container xl:max-w-screen-xl px-4 py-16 md:px-10 md:py-20 xl:px-20 mx-auto">
+    <h2 class="font-bold text-3xl text-center md:text-4xl text-gradient">
+      Mis proyectos
+    </h2>
+    <p class="text-center text-lg">Estos son proyectos principales que he creado durante mis años de formación: </p>
+    <Project
+      id="novaship"
+      title="Novaship - Aplicacion web de pasantías y ofertas de trabajo"
+      date="2022-2023"
+      image="register"
+      url="http://novaship-dev.vercel.app"
+      stack={['React', 'Next.js', 'TailwindCSS', 'Prisma', 'PostgreSQL']}
+    >
+      <p class="max-w-[60ch] mt-4">Desarrollé esta aplicación web como uno de mis <span class="text-slate-200">proyectos universitarios.</span> Permite a los estudiantes universitarios el buscar cupos para <span class="text-slate-200">pasantías y ofertas de trabajo</span> publicadas porempresas, además de permitir a las universidades llevar un control de sus pasantes.</p>
+    </Project>
+    <Divider />
+    <Project
+      id="uptavs"
+      title="Sistema de Cursos Universitarios"
+      date="2021-2022"
+      image="stats"
+      repo="uptavs-app"
+      url="http://novaship-dev.vercel.app"
+      stack={['PHP', 'Laravel', 'MySQL', 'Bootstrap', 'JavaScript']}
+      inverted
+    >
+      <p class="max-w-[60ch] mt-4">Sistema web para la gestión de <span class="text-slate-200">cursos y clubes universitarios.</span> Permite la publicación de cursos por parte de una universidad, asignación de instructores, <span></span> control de matrícula, aprobación de estudiantes, etc. Permite a los usuarios descubrir los cursos publicados, matricularse y obtener sus <span class="text-slate-200">certificados en línea.</span></p>
+    </Project>
+    <Divider />
+    <Project
+      id="todo"
+      title="ToDo - Aplicación de lista de tareas"
+      date="2022-2023"
+      image="light"
+      repo="todo-app"
+      url="http://novaship-dev.vercel.app"
+      stack={['JavaScript', 'React', 'Webpack', 'CSS']}
+    >
+      <p class="max-w-[60ch] mt-4">Desarrollé esta pequeña aplicación basada en un <a class="text-green-400 font-medium hover:underline" href="https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW" target="_blank" rel="noopener noreferrer">reto de FrontendMentor</a>, mientras aprendía las bases de <span class="text-slate-200">React</span>. Permite <span class="text-slate-200">crear, filtrar, y eliminar tareas</span>, además de marcarlas como completadas, guardando los datos al almacenamiento local del navegador, además de poder alternar entre <span class="text-slate-200">tema claro y oscuro.</span></p>
+    </Project>
+    <!-- TODO -> archivo de proyectos -->
+    <!-- <div class="flex justify-end w-full">
+      <a class="font-medium flex items-center gap-1 text-green-400 hover:underline" href="/proyectos">
+        Ver más proyectos
+        <Icon id="link" class="h-4" />
+      </a>
+    </div> -->
+  </div>
 </section>
 <Slideshow />

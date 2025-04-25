@@ -4,8 +4,8 @@ import Icon from './Icon.astro'
 const { id, title, date, stack, image, url, repo, inverted = false } = Astro.props
 ---
 
-<div class="bg-slate-900 flex items-center my-6 gap-4 p-8 rounded-xl">
-  {!inverted && <Cover id={id} image={image} />}
+<div class="bg-slate-900 flex flex-col lg:flex-row items-center my-6 gap-4 p-4 md:p-8 rounded-xl">
+  <Cover id={id} image={image} classes={['block', inverted && 'lg:hidden']} />
   <div>
     <h3 class="text-gradient text-2xl font-bold tracking-tighter leading-tight hover:text-gradient">
       {title}
@@ -24,11 +24,11 @@ const { id, title, date, stack, image, url, repo, inverted = false } = Astro.pro
       </a>
     </div>
     <slot />
-    <div class="flex gap-2 mt-4">
+    <div class="flex flex-wrap gap-2 mt-4">
       {stack.map((tech: string) => (
         <span class="text-green-400 bg-green-400/15 font-medium rounded-2xl px-2 py-1 text-sm">{tech}</span>
       ))}
     </div>
   </div>
-  {inverted && <Cover id={id} image={image} />}
+  {<Cover id={id} image={image} classes={['hidden', inverted && 'lg:block']} />
 </div>

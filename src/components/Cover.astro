@@ -1,10 +1,13 @@
 ---
 import { Image } from 'astro:assets'
 import Icon from './Icon.astro'
-const { id, image } = Astro.props
+const { id, image, classes } = Astro.props
+
+classes.push('border-4 border-slate-700 rounded-lg relative cursor-pointer max-w-[550px] w-full h-full overflow-y-hidden group')
+
 const src = import(`../images/projects/${id}/${image}.png`)
 ---
-<div class="border-4 border-slate-700 rounded-lg relative cursor-pointer max-w-[550px] w-full h-full overflow-y-hidden group">
+<div class:list={classes}>
   <Image class="rounded" src={src} alt="Captura de pantalla de un proyecto" data-cover={id} data-dialog="slideshow" />
   <div class="bg-slate-950 opacity-0 w-full h-full rounded absolute top-0 left-0 group-hover:opacity-25 transition-opacity pointer-events-none">
   </div>
