@@ -11,8 +11,6 @@
   "dependencies": {
     "@astrojs/tailwind": "^5.1.5",
     "astro": "^5.1.10",
-    "tailwindcss": "^3.4.17",
-    "flowbite": "^2.5.1",
-    "tooltip-helper": "^1.0.4"
+    "tailwindcss": "^3.4.17"
   }
 }

@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets'
-const { src, title, tooltip } = Astro.props
+const { src, title } = Astro.props
 const image = import(`../images/logos/${src}.svg`)
 ---
 
@@ -8,6 +8,5 @@ const image = import(`../images/logos/${src}.svg`)
   data-logo="true"
   alt={`Logo de ${title}`}
   src={image}
-  data-tooltip-target={tooltip}
   class="h-16 w-16 object-fill absolute top-[2.5rem] brightness-100 hover:brightness-125"
 />

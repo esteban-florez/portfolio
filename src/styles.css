@@ -12,12 +12,6 @@ html {
 }
 
 @font-face {
-  font-family: Inter;
-  src: url('/InterItalic.ttf');
-  font-style: italic;
-}
-
-@font-face {
   font-family: Playwrite;
   src: url('/Playwrite.ttf');
 }
