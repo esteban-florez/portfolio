@@ -64,10 +64,6 @@ body {
   @apply bg-center md:bg-left bg-cover;
 }
 
-.bg-hero > div {
-  min-height: calc(100vh - 4rem);
-}
-
 .carousel-logo {
   transition: filter 300ms;
 }

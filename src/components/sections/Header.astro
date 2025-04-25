@@ -1,35 +1,37 @@
 ---
 import Icon from '../Icon.astro'
 ---
-<header class="flex items-center w-full px-2 lg:px-8 py-3 lg:py-0 lg:h-16 justify-between shadow-xl">
-  <button class="lg:hidden" aria-label="Abrir menú de navegación" id="drawer-open">
-    <!-- // TODO -> icono de menu -->
-    <Icon id="menu" class="h-5 text-slate-200 mb-0.5" />
-  </button>
-  <div class="flex items-center gap-1 lg:gap-2">
-    <a class="contents" href="/">
-      <Icon id="code" class="h-6 w-6 lg:h-8 lg:w-8 text-green-400" />
-      <p class="font-bold tracking-tight text-lg lg:text-xl text-gradient">
-        Esteban Florez
-      </p>
-    </a>
-  </div>
-  <div class="hidden lg:flex items-center gap-6 pl-8 text-slate-300 font-medium">
-    <a class="underline-animation block px-1 hover:text-teal-400" href="#sobre-mi">Sobre mí</a>
-    <a class="underline-animation block px-1 hover:text-teal-400" href="#proyectos">Proyectos</a>
-    <a class="underline-animation block px-1 hover:text-teal-400" href="#contacto">Contacto</a>
-  </div>
-  <div class="flex items-center gap-2">
-    <a href="https://github.com/esteban-florez" target="_blank" rel="noopener noreferrer">
-      <Icon id="github" class="h-5 lg:h-7 text-slate-200 hover:text-teal-400 transition-colors" />
-    </a>
-    <a href="https://www.linkedin.com/in/esteban-florez-b210a5283" target="_blank" rel="noopener noreferrer">
-      <Icon id="linkedin" class="h-6 lg:h-8 text-slate-200 hover:text-teal-400 transition-colors" />
-    </a>
-    <button
-      class="bg-gradient text-slate-800 px-3 py-2 rounded-lg text-sm hover:brightness-90 transition-all hidden lg:flex items-center gap-1">
-      <Icon id="download" class="h-5" />
-      Currículum
+<header class="w-full shadow-xl fixed z-20 bg-slate-900/90">
+  <div class="flex items-center w-full px-2 lg:px-8 py-3 lg:py-0 lg:h-16 justify-between max-w-screen-xl mx-auto">
+    <button class="md:hidden" aria-label="Abrir menú de navegación" id="drawer-open">
+      <Icon id="menu" class="h-5 text-slate-200 mb-0.5" />
     </button>
+    <div class="flex items-center gap-1 lg:gap-2">
+      <a class="contents" href="/">
+        <Icon id="code" class="h-6 w-6 lg:h-8 lg:w-8 text-green-400" />
+        <p class="font-bold tracking-tight text-lg lg:text-xl text-gradient">
+          Esteban Florez
+        </p>
+      </a>
+    </div>
+    <div class="hidden md:flex items-center gap-6 pl-8 text-slate-300 font-medium">
+      <a class="underline-animation block px-1 hover:text-teal-400" href="#sobre-mi">Sobre mí</a>
+      <a class="underline-animation block px-1 hover:text-teal-400" href="#proyectos">Proyectos</a>
+      <a class="underline-animation block px-1 hover:text-teal-400 md:hidden lg:inline" href="#habilidades">Habilidades</a>
+      <a class="underline-animation block px-1 hover:text-teal-400" href="#contacto">Contacto</a>
+    </div>
+    <div class="flex items-center gap-2">
+      <a href="https://github.com/esteban-florez" target="_blank" rel="noopener noreferrer">
+        <Icon id="github" class="h-5 lg:h-7 text-slate-200 hover:text-teal-400 transition-colors" />
+      </a>
+      <a href="https://www.linkedin.com/in/esteban-florez-b210a5283" target="_blank" rel="noopener noreferrer">
+        <Icon id="linkedin" class="h-6 lg:h-8 text-slate-200 hover:text-teal-400 transition-colors" />
+      </a>
+      <button
+        class="bg-gradient text-slate-800 px-3 py-2 rounded-lg text-sm hover:brightness-90 transition-all hidden md:flex items-center gap-1">
+        <Icon id="download" class="h-5" />
+        Currículum
+      </button>
+    </div>
   </div>
 </header>
