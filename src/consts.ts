@@ -40,3 +40,9 @@ export const SKILLS = {
   mysql: 'MySQL',
   postgres: 'PostgreSQL',
 } as const
+
+export interface ImageData {
+  name: string
+  project: string
+  src: ImageMetadata
+}

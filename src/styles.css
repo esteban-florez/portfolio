@@ -68,7 +68,7 @@ body {
 
 .logos {
   will-change: transform;
-  animation: scrolling 15s linear infinite;
+  animation: scrolling 20s linear infinite;
 }
 
 dialog[open].animate-fadein {

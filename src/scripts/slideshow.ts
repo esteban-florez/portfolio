@@ -95,8 +95,8 @@ function resetOpacityTimer() {
   }
 
   const controls = nextButton.parentElement as HTMLDivElement
-  const invisible = ['opacity-0', 'pointer-events-none']
-  const visible = ['opacity-100', 'transition-opacity']
+  const invisible = ['lg:opacity-0', 'lg:pointer-events-none']
+  const visible = ['lg:opacity-100', 'lg:transition-opacity']
   
   timer = setTimeout(() => {
     controls.classList.add(...invisible)
