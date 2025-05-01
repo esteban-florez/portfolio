@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 import type { ImageData } from '../../consts'
-import { sources as images } from '../../scripts/images-sources'
+import { images } from '../../images-sources'
 import SlideButton from './SlideButton.astro'
 ---
 
@@ -9,7 +9,7 @@ import SlideButton from './SlideButton.astro'
   <SlideButton icon="left" id="slide-previous" />
   <div class="hidden md:flex justify-center items-center gap-4" id="thumbnails">
     {images.map(({ name, src, project }: ImageData) => (
-      <Image class="ring-4 ring-transparent hover:ring-slate-400 cursor-pointer h-14 lg:h-16 transition-all aspect-video w-auto" src={src} alt="Captura de pantalla" data-thumbnail={`${project}-${name}`} />
+      <Image width={112} height={63} class="ring-4 ring-transparent hover:ring-slate-400 cursor-pointer w-24 lg:w-28 transition-all aspect-video" src={src} alt="Captura de pantalla" data-thumbnail={`${project}-${name}`} />
     ))}
   </div>
   <SlideButton icon="right" id="slide-next" />

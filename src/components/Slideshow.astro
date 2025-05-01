@@ -1,15 +1,15 @@
 ---
 import { Image } from 'astro:assets'
 import { type ImageData } from '../consts'
-import { sources as images } from '../scripts/images-sources'
+import { images } from '../images-sources'
 import Dialog from './Dialog.astro'
 import SlideControls from './slides-controls/SlideControls.astro'
 import SlideClose from './slides-controls/SlideClose.astro'
 ---
 
-<Dialog class="select-none open:flex flex-col bg-slate-950/80 justify-center" id="slideshow">
+<Dialog class="select-none bg-slate-950/80" id="slideshow">
   {images.map(({ name, src, project }: ImageData) => (
-    <Image class="max-w-full max-h-full aspect-video" src={src} alt="Capturas de pantalla de proyectos" data-slide={`${project}-${name}`} />
+    <Image width="1920" height="1080" class="max-h-[calc(100vh-2.5rem)] h-full w-auto aspect-video" src={src} alt="Capturas de pantalla de proyectos" data-slide={`${project}-${name}`} />
   ))}
   <SlideClose />
   <SlideControls />
