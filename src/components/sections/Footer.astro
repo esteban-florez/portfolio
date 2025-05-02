@@ -21,41 +21,6 @@ const vars = {
 }
 ---
 
-<style define:vars={vars}>
-  footer {
-    background-image: var(--bg-sm);
-  }
-
-  @media (min-width: 768px) {
-    footer {
-      background-image: var(--bg-md);
-    }
-  }
-
-  @media (min-width: 1024px) {
-    footer {
-      background-image: var(--bg-lg);
-    }
-  }
-
-  @media (min-width: 1280px) {
-    footer {
-      background-image: var(--bg-xl);
-    }
-  }
-
-  @media (min-width: 1536px) {
-    footer {
-      background-image: var(--bg-2xl);
-    }
-  }
-
-  @media (min-width: 1920px) {
-    footer {
-      background-image: var(--bg-3xl);
-    }
-  }
-</style>
 <footer class="bg-cover bg-center w-full" id="contacto">
   <div class="bg-slate-950/80 w-full">
     <div class="container px-4 py-16 md:px-10 md:pt-20 mx-auto">
@@ -100,3 +65,38 @@ const vars = {
     </div>
   </div>
 </Dialog>
+<style define:vars={vars}>
+  footer {
+    background-image: var(--bg-sm);
+  }
+
+  @media (min-width: 768px) {
+    footer {
+      background-image: var(--bg-md);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    footer {
+      background-image: var(--bg-lg);
+    }
+  }
+
+  @media (min-width: 1280px) {
+    footer {
+      background-image: var(--bg-xl);
+    }
+  }
+
+  @media (min-width: 1536px) {
+    footer {
+      background-image: var(--bg-2xl);
+    }
+  }
+
+  @media (min-width: 1920px) {
+    footer {
+      background-image: var(--bg-3xl);
+    }
+  }
+</style>

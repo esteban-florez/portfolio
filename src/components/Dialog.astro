@@ -7,7 +7,36 @@ const props = structuredClone(Astro.props)
 delete props.class
 ---
 
-<dialog {...props} class:list={['backdrop:w-screen backdrop:h-screen backdrop:bg-black animate-fadein border-none outline-none open:block max-lg:mx-0 max-lg:max-w-full', classes]}>
+<dialog {...props} class:list={['backdrop:w-screen backdrop:h-screen backdrop:bg-black border-none outline-none open:block max-lg:mx-0 max-lg:max-w-full', classes]}>
   <slot />
 </dialog>
+<style>
+  dialog[open] {
+    animation: fadein 200ms ease-in both;
+  }
+
+  dialog[open]::backdrop {
+    animation: fadein-backdrop 200ms ease-in both;
+  }
+
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadein-backdrop {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 0.9;
+    }
+  }
+</style>
 <script src="/src/scripts/dialog.ts"></script>

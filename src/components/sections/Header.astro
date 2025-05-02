@@ -1,6 +1,7 @@
 ---
 import Icon from '../Icon.astro'
 ---
+
 <header class="w-full shadow-xl fixed z-20 bg-slate-900/90">
   <div class="flex items-center w-full px-2 lg:px-8 py-3 lg:py-0 lg:h-16 justify-between max-w-screen-xl mx-auto">
     <button class="md:hidden" aria-label="Abrir menú de navegación" id="drawer-open">
@@ -14,17 +15,17 @@ import Icon from '../Icon.astro'
         </p>
       </a>
     </div>
-    <div class="hidden md:flex items-center gap-6 pl-8 text-slate-300 font-medium">
+    <div class="hidden md:flex items-center gap-6 pl-8 text-slate-300 font-medium" id="nav-links">
       <a class="underline-animation block px-1 hover:text-teal-400" href="#sobre-mi">Sobre mí</a>
       <a class="underline-animation block px-1 hover:text-teal-400" href="#proyectos">Proyectos</a>
       <a class="underline-animation block px-1 hover:text-teal-400 md:hidden lg:inline" href="#habilidades">Habilidades</a>
       <a class="underline-animation block px-1 hover:text-teal-400" href="#contacto">Contacto</a>
     </div>
     <div class="flex items-center gap-2">
-      <a href="https://github.com/esteban-florez" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/esteban-florez" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="Enlace a GitHub">
         <Icon id="github" class="h-5 lg:h-7 text-slate-200 hover:text-teal-400 transition-colors" />
       </a>
-      <a href="https://www.linkedin.com/in/esteban-florez-b210a5283" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/esteban-florez-b210a5283" target="_blank" rel="noopener noreferrer" aria-label="Enlace a LinkedIn">
         <Icon id="linkedin" class="h-6 lg:h-8 text-slate-200 hover:text-teal-400 transition-colors" />
       </a>
       <button
@@ -35,3 +36,20 @@ import Icon from '../Icon.astro'
     </div>
   </div>
 </header>
+<style>
+  #nav-links > a {
+    @apply relative;
+  }
+
+  #nav-links > a::after {
+    @apply absolute bottom-0 left-0 w-full h-0.5 opacity-0 bg-teal-400;
+    content: '';
+    transition: opacity 300ms, transform 300ms;
+  }
+
+  #nav-links > a:hover::after,
+  #nav-links > a:focus::after {
+    @apply opacity-100;
+    transform: translate3d(0, 0.2rem, 0);
+  }
+</style>

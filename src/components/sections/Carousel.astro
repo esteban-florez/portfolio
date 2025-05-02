@@ -22,4 +22,27 @@ const logos = Object.entries(LOGOS)
     ))}
   </div>
 </section>
+<style>
+  .carousel-logo {
+    transition: filter 300ms;
+  }
 
+  .carousel-logo:hover {
+    --tw-drop-shadow: drop-shadow(0 0 .25rem #999);
+  }
+
+  .logos {
+    will-change: transform;
+    animation: scrolling 20s linear infinite;
+  }
+
+  @keyframes scrolling {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-102.5%);
+    }
+  }
+</style>
