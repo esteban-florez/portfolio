@@ -9,7 +9,7 @@ import SlideClose from './slides-controls/SlideClose.astro'
 
 <Dialog class="select-none bg-slate-950/80" id="slideshow">
   {images.map(({ name, src, project }: ImageData) => (
-    <Image width="1920" height="1080" class="max-h-[calc(100vh-2.5rem)] h-full w-auto aspect-video" src={src} alt="Capturas de pantalla de proyectos" data-slide={`${project}-${name}`} />
+    <Image width={1920} height={1080} class="max-h-[calc(100vh-2.5rem)] h-full w-auto aspect-video" src={src} alt="Capturas de pantalla de proyectos" data-slide={`${project}-${name}`} />
   ))}
   <SlideClose />
   <SlideControls />

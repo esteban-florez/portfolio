@@ -35,6 +35,8 @@ import { Image } from 'astro:assets'
     </div>
     <Image
       class="w-64 lg:w-72 object-cover rounded-xl object-top border-4 border-slate-900 aspect-[18/20]"
+      widths={[256, 288]}
+      sizes={'(max-width: 1023px) 256px, 288px'}
       src={profile}
       alt="Imagen de Esteban Florez"
     />
