@@ -12,11 +12,13 @@ const { id, title, date, stack, image, url, repo, inverted = false } = Astro.pro
     </h3>
     <p class="text-sm font-bold">{date}</p>
     <div class="flex items-center gap-4 mt-4">
-      <a href={url} target="_blank" rel="noopener noreferrer"
+      {url && (
+        <a href={url} target="_blank" rel="noopener noreferrer"
         class="flex bg-gradient rounded-lg items-center gap-1 text-slate-800 px-2 py-1 text-sm">
-        <Icon id="link" class="h-4" />
-        Sitio web
-      </a>
+          <Icon id="link" class="h-4" />
+          Sitio web
+        </a>
+      )}
       <a href={`https://github.com/esteban-florez/${repo ?? id}`} target="_blank" rel="noopener noreferrer"
         class="flex bg-gradient rounded-lg items-center gap-1 text-slate-800 px-2 py-1 text-sm">
         <Icon id="github" class="h-4" />
