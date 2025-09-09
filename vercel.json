@@ -1,12 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/todo-app/:path*",
-      "destination": "https://todo-tasks-esteban.vercel.app/:path*"
+      "source": "/novaship/:path*",
+      "destination": "https://novaship.estebanflorez.com/:path*"
     },
     {
-      "source": "/todo-app/static/:path*",
-      "destination": "https://todo-tasks-esteban.vercel.app/static/:path*"
+      "source": "/todo-app/:path*",
+      "destination": "https://todo-tasks-esteban.vercel.app/:path*"
     },
     {
       "source": "/sistema-cursos/:path*",
