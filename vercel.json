@@ -1,20 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/novaship/:path*",
-      "destination": "https://novaship-dev.vercel.app/:path*"
-    },
-        {
-      "source": "/_next/static/:path*",
-      "destination": "https://novaship-dev.vercel.app/_next/static/:path*"
-    },
-    {
-      "source": "/_next/data/:path*",
-      "destination": "https://novaship-dev.vercel.app/_next/data/:path*"
-    },
-    {
       "source": "/todo-app/:path*",
       "destination": "https://todo-tasks-esteban.vercel.app/:path*"
+    },
+    {
+      "source": "/todo-app/static/:path*",
+      "destination": "https://todo-tasks-esteban.vercel.app/static/:path*"
     },
     {
       "source": "/sistema-cursos/:path*",
